@@ -1,4 +1,4 @@
-from paparan_utama import PaparanUtama
+from paparan import Paparan
 
-app = PaparanUtama()
+app = Paparan()
 app.paparan_utama()

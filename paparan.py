@@ -40,11 +40,12 @@ class Paparan:
             print('Pilihan anda: ')
 
             pilihan = input()
-            if pilihan == 1:
+            if pilihan == '1':
                 print('Under construction - Sebagai Admin\n')
-            elif pilihan == 2:
+            elif pilihan == '2':
                 print ('Under construction - Sebagai User\n')
-            elif pilihan == 6:
+            elif pilihan == '6':
+                program_masih_berjalan = False
                 self.paparan_utama()
             else:
                 print('Pilihan tidak sah')
