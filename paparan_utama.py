@@ -1,3 +1,4 @@
+from paparan_admin import PaparanAdmin
 class PaparanUtama:
     def paparan_utama(self):
         program_masih_berjalan = True
@@ -15,7 +16,8 @@ class PaparanUtama:
             print('\n')
             pilihan = input()
             if pilihan == 'A':
-                print('Under construction - Sebagai Admin\n')
+                paparan_untuk_admin = PaparanAdmin()
+                paparan_untuk_admin.paparan_admin
             elif pilihan == 'U':
                 print ('Under construction - Sebagai User\n')
             elif pilihan == 'Q':
