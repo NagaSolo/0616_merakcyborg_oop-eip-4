@@ -78,3 +78,8 @@ Features:
 `Password`: 
 - This railway/bus/flight reservation system project in C++ requires the administrator password to access the admin mode.
 - The password is “to be decided”. If you enter the wrong password, it displays the message – “You are not permitted to login.”
+
+### Progress
+- Create main menu UI(terminal) class Paparan
+    - Scaffold -> `DONE`
+    - Basic DB (without using SQL or any common solution) -> `WIP`
