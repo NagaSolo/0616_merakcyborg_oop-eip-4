@@ -82,4 +82,5 @@ Features:
 ### Progress
 - Create main menu UI(terminal) class Paparan
     - Scaffold -> `DONE`
-    - Basic DB (without using SQL or any common solution) -> `WIP`
+- Basic DB (without using SQL or any common solution) -> `WIP`
+    - Connect admin to db -> `WIP`
