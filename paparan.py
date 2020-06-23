@@ -1,5 +1,8 @@
-
+from pangkalandata import PangkalanData
 class Paparan:
+    def __init__(self, katalaluan):
+        self.katalaluan = katalaluan
+
     def paparan_utama(self):
         program_masih_berjalan = True
 
@@ -16,7 +19,13 @@ class Paparan:
             print('\n')
             pilihan = input()
             if pilihan == 'A':
-                self.paparan_admin()
+                print('Sila masukkan kata laluan - Sebagai Admin\n')
+                katalaluan = 'marakapicinta'
+                masukanpengguna = input()
+                if (masukanpengguna == katalaluan):
+                    self.paparan_admin()
+                else:
+                    print('Katalaluan salah')
             elif pilihan == 'U':
                 print ('Under construction - Sebagai User\n')
             elif pilihan == 'Q':
@@ -41,7 +50,8 @@ class Paparan:
 
             pilihan = input()
             if pilihan == '1':
-                print('Under construction - Sebagai Admin\n')
+                pangkalandata = PangkalanData()
+                
             elif pilihan == '2':
                 print ('Under construction - Sebagai User\n')
             elif pilihan == '6':
