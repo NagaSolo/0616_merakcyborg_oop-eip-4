@@ -12,7 +12,7 @@ class Perincian:
         self.tambang_kelas_pertama = tambang_kelas_pertama
         self.bilangan_kelas_kedua = bilangan_kelas_kedua
         self.tambang_kelas_kedua = tambang_kelas_kedua
-        self.tarikh_perjalanan = { 'Tahun' : '', 'Bulan' : '', 'Hari' : ''}        
+        self.tarikh_perjalanan = { 'Tahun' : '', 'Bulan' : '', 'Hari' : ''}
 
     def data_perincian_baharu(self):
         print('Masukkan perincian baharu data :\n')
@@ -31,5 +31,7 @@ class Perincian:
         bilangan_kelas_pertama = input()
         tambang_kelas_pertama = input()
         print('Tarikh perjalanan: ')
-        tarikh_perjalanan = { 'Tahun' : '', 'Bulan' : '', 'Hari' : ''}
-        
+        tahun = input()
+        bulan = input()
+        hari = input()
+        tarikh_perjalanan = { 'Tahun' : tahun, 'Bulan' : bulan, 'Hari' : hari}
