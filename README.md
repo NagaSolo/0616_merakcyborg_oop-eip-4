@@ -12,7 +12,7 @@ Features:
     - Create Users from the Admin mode. 
     - Once users are created, the same user is usable again and again, and they will be stored in separate files.
 
-- The operations related to both these modes are quite similar in this railway/bus/flight reservation system project in C++. 
+- The operations related to both these modes are quite similar in this railway/bus/flight reservation system project in. 
     - In Admin mode:
         - create detail database
         - add details
@@ -30,7 +30,7 @@ Features:
         - and display details.
 
 `Train and Reservation` details:
-- In this railway reservation system project in C++:
+- In this railway reservation system project:
     - Users can get both the train/bus/flight details and the train/bus/flight reservation details. 
     - The details to be provided for train/bus/flight are:
         - train/bus/flight no.
@@ -62,7 +62,7 @@ Features:
 
 `Cancel reservation`:
 - It is somewhat similar to the feature mentioned above.
-- This feature requires the date of cancellation in this railway reservation system project in C++.
+- This feature requires the date of cancellation in this railway reservation system project.
 - Then cancellation details can be displayed; 
     - the details here include:
         - train no.
@@ -76,7 +76,7 @@ Features:
         - and the amount to be collected back.
 
 `Password`: 
-- This railway/bus/flight reservation system project in C++ requires the administrator password to access the admin mode.
+- This railway/bus/flight reservation system project in requires the administrator password to access the admin mode.
 - The password is “to be decided”. If you enter the wrong password, it displays the message – “You are not permitted to login.”
 
 ### Progress
