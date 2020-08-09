@@ -50,7 +50,7 @@ class Paparan:
 
             pilihan = input()
             if pilihan == '1':
-                pangkalandata = PangkalanData()
+                pangkalandata = PangkalanData(self.katalaluan)
                 
             elif pilihan == '2':
                 print ('Under construction - Sebagai User\n')
