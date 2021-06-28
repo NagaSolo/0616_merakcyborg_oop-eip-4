@@ -1,0 +1,78 @@
+version: '3.6'
+services:
+    postgres:
+        container_name: postgres_container
+        build:
+            context: ./postgresql
+            dockerfile: Dockerfile
+        image: redsquare/postgresql  
+        ports: 
+            - "5432:5432" 
+        restart: always
+        volumes:
+            - ./postgresql/db_data:/var/lib/postgresql/data
+        env_file: 
+            - ./postgresql/.env
+            
+    pgadmin:
+        container_name: pgadmin4_container
+        build:
+            context: ./pgadmin
+            dockerfile: Dockerfile
+        image: redsquare/pgadmin4
+        restart: always
+        volumes: 
+            - ./pgadmin/pgadmin_data:/var/lib/pgadmin
+        env_file:
+            - ./pgadmin/.env
+        ports:
+            - "5050:80" 
+    
+    graphql-engine:
+        container_name: hasura_container
+        build:
+            context: ./hasura
+            dockerfile: Dockerfile
+        image: redsquare/graphql 
+        ports: 
+            - "8181:8080"
+        depends_on:
+            - "postgres"
+        restart: always
+        env_file:
+            - ./hasura/.env
+            
+    cubestore:
+        container_name: cubestore_container
+        build: 
+            context: ./cubestore
+            dockerfile: Dockerfile
+        image: redsquare/cubestore
+        ports: 
+            - 3030:3030
+        environment:
+            - CUBESTORE_REMOTE_DIR=/cube/data
+        volumes:
+            - /cubestore/.cubestore:/cube/data
+            
+    cube:
+        container_name: cubejs_container
+        build:
+            context: ./cubejs
+            dockerfile: Dockerfile
+        image: redsquare/cubejs  
+        ports:
+            - 4000:4000  # Cube.js API
+            - 3000:3000  # Developer Playground
+        depends_on: 
+            - "postgres"
+            - "cubestore"
+        links:
+            - cubestore
+        restart: always
+        env_file: 
+            - ./cubejs/.env
+        volumes:
+            - ./cubejs/dashboard-app:/cube/conf/dashboard-app
+            - ./cubejs:/cube/conf/
+            - ./cubejs/schema:/cube/conf/schema
