@@ -84,3 +84,7 @@ Features:
     - Scaffold -> `DONE`
 - Basic DB (without using SQL or any common solution) -> `WIP`
     - Connect admin to db -> `WIP`
+
+### Microservices
+    - Using hasura combinations with cubejs for data modelling
+    - react combined with antd for graph
