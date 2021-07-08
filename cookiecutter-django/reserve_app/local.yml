@@ -35,6 +35,11 @@ services:
     env_file:
       - ./.envs/.local/.postgres
 
+  hasura:
+    build:
+      context: .
+      dockerfile: ./compose/local/hasura/Dockerfile
+
   docs:
     image: reserve_app_local_docs
     container_name: docs
