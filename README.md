@@ -88,4 +88,4 @@ Features:
 ### Microservices
     - Using hasura combinations with cubejs for data modelling
     - react combined with antd for graph
-    - started from django cookiecutter template
+    - to be integrated with django cookiecutter template docker compose file
