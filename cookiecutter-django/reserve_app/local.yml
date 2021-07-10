@@ -39,6 +39,19 @@ services:
     build:
       context: .
       dockerfile: ./compose/local/hasura/Dockerfile
+    image: reserve_app_local_hasura
+    volumes:
+      - ./hasura/migrations:/hasura-migrations
+      - ./hasura/metadata:/hasura-metadata
+    container_name: hasura
+    restart: always
+    depends_on:
+      - 'postgres'
+      - 'django'
+    env_file:
+      - ./envs/.local/.hasura
+    ports:
+      - "8181:8080"
 
   docs:
     image: reserve_app_local_docs
