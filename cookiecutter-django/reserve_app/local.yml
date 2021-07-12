@@ -53,6 +53,16 @@ services:
     ports:
       - "8181:8080"
 
+  meilisearch:
+    build:
+      context: .
+      dockerfile: ./compose/production/meilisearch/Dockerfile
+    image: reserve_app_production_meilisearch
+    volumes:
+      - meilisearch/data.ms:/data.ms
+    ports:
+      - "7700:7700"
+
   docs:
     image: reserve_app_local_docs
     container_name: docs
