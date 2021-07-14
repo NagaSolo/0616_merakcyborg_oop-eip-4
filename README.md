@@ -86,6 +86,7 @@ Features:
     - Connect admin to db -> `WIP`
 
 ### Microservices
-    - Using hasura combinations with cubejs for data modelling
+    - hasura for populating the databases 
+    - cubejs for data modelling
     - react combined with antd for graph
     - to be integrated with django cookiecutter template docker compose file
