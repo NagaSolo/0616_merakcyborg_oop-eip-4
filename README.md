@@ -7,10 +7,12 @@
 
 Features:
 
-`Administrator mode`: 
-- There are two modes in this project – the administrator mode and the user mode
+`Administrator model`: 
+- There are two modes in this project 
+    - the administrator mode and the user mode
     - Create Users from the Admin mode. 
-    - Once users are created, the same user is usable again and again, and they will be stored in separate files.
+    - Once users are created, the same user is usable again and again, 
+    and they will be stored in separate files.
 
 - The operations related to both these modes are quite similar in this railway/bus/flight reservation system project in. 
     - In Admin mode:
@@ -20,7 +22,7 @@ Features:
         - perform user management functions
         - and display passenger details.
 
-`User mode`: 
+`User model`: 
 - As aforementioned,
     - User need to go to the administrator mode and create users. 
     - After that, these users are usable as we wish, and the information related to them will be recorded in separate files.
@@ -29,7 +31,7 @@ Features:
         - add detail
         - and display details.
 
-`Train and Reservation` details:
+`Train and Reservation model` details:
 - In this railway reservation system project:
     - Users can get both the train/bus/flight details and the train/bus/flight reservation details. 
     - The details to be provided for train/bus/flight are:
@@ -89,4 +91,4 @@ Features:
     - hasura for populating the databases 
     - cubejs for data modelling
     - react combined with antd for graph
-    - to be integrated with django cookiecutter template docker compose file
+    - django cookiecutter template docker compose file
