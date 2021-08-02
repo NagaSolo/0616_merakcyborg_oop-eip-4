@@ -1,16 +1,35 @@
-User:
+user:
     - user_id
     - name
     - address
     - date of birth
     - reservations
+    - tickets
 
-Pofile:
+profile:
     - user_id
     - picture
 
-tickets:
+ticket:
     - ticket_id
-    - type
-    - departure
-    = transport number
+    - type -> train/bus/flight
+    - departure time
+    - transport number
+    - train/bus/flight name
+    - boarding point
+    - destination point
+    - ticket fare
+    - date of travel.
+
+reservation:
+    - type -> train/bus/flight
+    - departure time
+    - transport number
+    - train/bus/flight name
+    - boarding point
+    - destination point
+    - no. of seats in first class
+    - fare per ticket/bus/flight
+    - no. of seats in second class
+    - fare per ticket
+    - date of travel.
