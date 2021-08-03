@@ -1,8 +1,11 @@
 version: '3'
 
 volumes:
-  local_postgres_data: {}
-  local_postgres_data_backups: {}
+  local_reserve_postgres_data: {}
+  local_reserve_postgres_data_backups: {}
+  local_reserve_hasura_migrations: {}
+  local_reserve_hasura_metadata: {}
+  local_reserve_meilisearch: {}
 
 services:
   django: &django
@@ -30,8 +33,8 @@ services:
     image: reserve_app_production_postgres
     container_name: postgres
     volumes:
-      - local_postgres_data:/var/lib/postgresql/data:Z
-      - local_postgres_data_backups:/backups:z
+      - local_reserve_postgres_data:/var/lib/postgresql/data:Z
+      - local_reserve_postgres_data_backups:/backups:z
     env_file:
       - ./.envs/.local/.postgres
 
@@ -42,8 +45,8 @@ services:
     image: reserve_app_local_hasura
     container_name: hasura
     volumes:
-      - ./volumes/local_hasura/migrations:/hasura-migrations
-      - ./volumes/local_hasura/metadata:/hasura-metadata
+      - local_reserve_hasura_migrations:/hasura-migrations
+      - local_reserve_hasura_metadata:/hasura-metadata
     restart: always
     depends_on:
       - 'postgres'
@@ -59,7 +62,7 @@ services:
       dockerfile: ./compose/production/meilisearch/Dockerfile
     image: reserve_app_production_meilisearch
     volumes:
-      - ./volumes/local_meilisearch/data.ms:/data.ms
+      - local_reserve_meilisearch/data.ms:/data.ms
     ports:
       - "7700:7700"
 
