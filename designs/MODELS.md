@@ -22,6 +22,7 @@ ticket:
     - date of travel.
 
 reservation:
+    - reservation_id
     - type -> train/bus/flight
     - departure time
     - transport number
@@ -32,4 +33,8 @@ reservation:
     - fare per ticket/bus/flight
     - no. of seats in second class
     - fare per ticket
-    - date of travel.
+    - date of travel
+
+transportation:
+    - transport_id
+    - type -> train/bus/flight
