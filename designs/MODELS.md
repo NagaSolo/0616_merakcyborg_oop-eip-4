@@ -9,6 +9,8 @@ user:
 profile:
     - user_id
     - picture
+    - tickets
+    - reservations
 
 ticket:
     - ticket_id
