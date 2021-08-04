@@ -3,8 +3,8 @@ version: '3'
 volumes:
   local_reserve_postgres_data: {}
   local_reserve_postgres_data_backups: {}
-  local_reserve_hasura_migrations: {}
-  local_reserve_hasura_metadata: {}
+  # local_reserve_hasura_migrations: {}
+  # local_reserve_hasura_metadata: {}
   local_reserve_meilisearch: {}
 
 services:
@@ -38,23 +38,37 @@ services:
     env_file:
       - ./.envs/.local/.postgres
 
-  hasura:
+  # hasura:
+  #   build:
+  #     context: .
+  #     dockerfile: ./compose/local/hasura/Dockerfile
+  #   image: reserve_app_local_hasura
+  #   container_name: hasura
+  #   volumes:
+  #     - local_reserve_hasura_migrations:/hasura-migrations
+  #     - local_reserve_hasura_metadata:/hasura-metadata
+  #   restart: always
+  #   depends_on:
+  #     - 'postgres'
+  #     - 'django'
+  #   env_file:
+  #     - ./.envs/.local/.hasura
+  #   ports:
+  #     - "8181:8080"
+      
+  graphql-engine:
     build:
       context: .
       dockerfile: ./compose/local/hasura/Dockerfile
-    image: reserve_app_local_hasura
-    container_name: hasura
-    volumes:
-      - local_reserve_hasura_migrations:/hasura-migrations
-      - local_reserve_hasura_metadata:/hasura-metadata
-    restart: always
+    image: bantut_django_local_graphql
+    container_name: hasura  
+    ports:  
+    - "8181:8080"
     depends_on:
-      - 'postgres'
-      - 'django'
+      - "postgres"
+    restart: always
     env_file:
       - ./.envs/.local/.hasura
-    ports:
-      - "8181:8080"
 
   meilisearch:
     build:
